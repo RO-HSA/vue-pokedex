@@ -11,6 +11,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vue/compat": "^3.4.23",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "bootstrap-vue": "^2.23.1",
     "vue": "^3.4.21",
     "vuex": "^4.0.2"
   },
