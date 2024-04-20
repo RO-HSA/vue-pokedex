@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+import MainHeader from './components/MainHeader.vue'
+import SearchPanel from './components/SearchPanel.vue'
+</script>
 
 <template>
-  <header></header>
+  <MainHeader />
+  <SearchPanel />
 </template>
 
 <style scoped></style>
