@@ -1,12 +1,11 @@
 import './assets/main.css'
 
-import Vue, { createApp } from '@vue/compat'
+import { createApp } from '@vue/compat'
 import App from './App.vue'
 import { BootstrapVue } from 'bootstrap-vue'
+import store from './store'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-Vue.use(BootstrapVue)
-
-createApp(App).mount('#app')
+createApp(App).use(store).use(BootstrapVue).mount('#app')
