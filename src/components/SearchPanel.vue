@@ -2,6 +2,8 @@
 import { computed, onBeforeMount, ref } from 'vue'
 import { useStore } from 'vuex'
 
+import capitalize from '@/utils/capitalize'
+
 const store = useStore()
 const pokemon = ref([])
 const isLoading = ref(true)
@@ -13,9 +15,9 @@ onBeforeMount(async () => {
 
   pokemon.value = pokemons.value.map((pokemon) => ({
     id: pokemon.id.toString().padStart(3, '0'),
-    name: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
-    types: pokemon.types.map((type) => type.charAt(0).toUpperCase() + type.slice(1)).join('/'),
-    species: pokemon.species.charAt(0).toUpperCase() + pokemon.species.slice(1)
+    name: capitalize(pokemon.name),
+    types: pokemon.types.map((type) => capitalize(type)).join('/'),
+    species: capitalize(pokemon.species)
   }))
 })
 
