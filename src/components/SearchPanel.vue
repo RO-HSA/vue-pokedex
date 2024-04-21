@@ -7,6 +7,8 @@ import capitalize from '@/utils/capitalize'
 const store = useStore()
 const pokemon = ref([])
 const isLoading = ref(true)
+const sortBy = 'id'
+const filter = ref('')
 
 onBeforeMount(async () => {
   await store.dispatch('fetchPokemons')
@@ -27,19 +29,17 @@ const fields = [
   { key: 'types', sortable: true },
   { key: 'species', sortable: true }
 ]
-const sortBy = 'id'
-const filter = ref('')
+
+const getPokemon = (pokemon) => {
+  store.dispatch('selectPokemon', pokemon.name)
+  store.dispatch('toggleModal')
+}
 </script>
 
 <template>
   <div class="panel">
     <div class="table">
-      <b-form-input
-        class="search-bar"
-        v-model="filter"
-        placeholder="Type to search..."
-        @input="searchChanged"
-      />
+      <b-form-input class="search-bar" v-model="filter" placeholder="Type to search..." />
       <div class="table-container">
         <b-table
           hover
@@ -47,6 +47,7 @@ const filter = ref('')
           :items="pokemon"
           :fields="fields"
           :filter="filter"
+          v-on:row-clicked="getPokemon"
           v-model:sort-by="sortBy"
           label-sort-desc=""
           label-sort-asc=""
