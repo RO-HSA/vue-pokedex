@@ -13,7 +13,12 @@ const sprites = Object.values(props.pokemon.sprites).filter((img) => typeof img 
     <p class="poke-id">#{{ props.pokemon.id.toString().padStart(3, '0') }}</p>
     <h2 class="poke-name">{{ capitalize(props.pokemon.name) }}</h2>
     <div class="d-flex gap-2">
-      <PokeTypes v-for="type in props.pokemon.types" :key="type" :class="type" :type="type" />
+      <PokeTypes
+        v-for="type in props.pokemon.types"
+        :key="type"
+        :class="type.toLowerCase()"
+        :type="type"
+      />
     </div>
     <div class="d-flex flex-wrap justify-content-center">
       <img v-for="sprite in sprites" :key="sprite" :src="sprite" />
