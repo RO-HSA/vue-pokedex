@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import getLocaleNames from '@/utils/getLocaleNames'
 
 export default createStore({
   state: {
@@ -25,16 +26,12 @@ export default createStore({
           )
 
           const movesUrls = pokemonData.data.moves.map((move) => move.move.url)
-          const movesData = await Promise.all(movesUrls.map((url) => axios.get(url)))
-          const moves = movesData.flatMap((move) =>
-            move.data.names.filter((name) => name.language.name === 'en').map((name) => name.name)
-          )
+          const movesData = await Promise.all(movesUrls.slice(0, 6).map((url) => axios.get(url)))
+          const moves = getLocaleNames(movesData)
 
           const typesUrls = pokemonData.data.types.map((type) => type.type.url)
-          const typesData = await Promise.all(typesUrls.map((url) => axios.get(url)))
-          const types = typesData.flatMap((type) =>
-            type.data.names.filter((name) => name.language.name === 'en').map((name) => name.name)
-          )
+          const typesData = await Promise.all(typesUrls.slice(0, 6).map((url) => axios.get(url)))
+          const types = getLocaleNames(typesData)
 
           pokemons.push({
             id: pokemonData.data.id,
