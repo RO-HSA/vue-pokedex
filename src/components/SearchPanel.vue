@@ -19,7 +19,7 @@ onBeforeMount(async () => {
     id: pokemon.id.toString().padStart(3, '0'),
     name: capitalize(pokemon.name),
     types: pokemon.types.map((type) => capitalize(type)).join('/'),
-    species: capitalize(pokemon.species)
+    species: capitalize(pokemon.species).replace('-', ' ')
   }))
 })
 
