@@ -25,15 +25,11 @@ export default createStore({
             `https://pokeapi.co/api/v2/pokemon-species/${pokemonData.data.id}`
           )
           const movesUrls = pokemonData.data.moves.map((move) => move.move.url)
-          const typesUrls = pokemonData.data.types.map((type) => type.type.url)
-
-          const [movesData, typesData] = await Promise.all([
-            Promise.all(movesUrls.map((url) => axios.get(url))),
-            Promise.all(typesUrls.map((url) => axios.get(url)))
-          ])
-
+          const movesData = await Promise.all(movesUrls.map((url) => axios.get(url)))
           const moves = getLocaleNames(movesData)
 
+          const typesUrls = pokemonData.data.types.map((type) => type.type.url)
+          const typesData = await Promise.all(typesUrls.map((url) => axios.get(url)))
           const types = getLocaleNames(typesData)
 
           pokemons.push({
