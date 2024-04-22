@@ -11,11 +11,13 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^4.0.0",
     "@vue/compat": "^3.4.23",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "bootstrap-vue": "^2.23.1",
     "vue": "^3.4.21",
+    "vue-i18n": "^9.13.1",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

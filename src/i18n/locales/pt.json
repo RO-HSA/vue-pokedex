@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "button_lang": "Idioma",
+    "options": {
+      "en": "Inglês",
+      "pt-BR": "Português",
+      "es": "Espanhol"
+    }
+  },
+  "panel": {
+    "placeholder": "Digite para pesquisar...",
+    "loading": "Carregando...",
+    "table": {
+      "name": "Nome",
+      "types": "Tipos",
+      "species": "Espécies"
+    }
+  },
+  "modal": {
+    "games": "Jogos",
+    "attack_moves": "Ataques",
+    "evolutions": "Evoluções"
+  },
+  "pokemon_type": {
+    "grass": "Planta",
+    "poison": "Venenoso",
+    "fire": "Fogo",
+    "flying": "Voador",
+    "water": "Água",
+    "bug": "Inseto",
+    "normal": "Normal",
+    "electric": "Elétrico",
+    "ground": "Solo",
+    "fairy": "Fada",
+    "fighting": "Lutador",
+    "psychic": "Psíquico",
+    "rock": "Pedra",
+    "steel": "Aço",
+    "ice": "Gelo",
+    "ghost": "Fantasma",
+    "dragon": "Dragão",
+    "dark": "Sombrio"
+  }
+}

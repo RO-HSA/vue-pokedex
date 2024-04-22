@@ -1,11 +1,9 @@
 <script setup>
-import capitalize from '@/utils/capitalize'
-
 const props = defineProps(['type'])
 </script>
 
 <template>
-  <div class="type-wrapper">{{ capitalize(props.type) }}</div>
+  <div class="type-wrapper">{{ props.type }}</div>
 </template>
 
 <style scoped>
@@ -15,51 +13,63 @@ const props = defineProps(['type'])
   font-weight: 500;
 }
 
-.bug {
+.bug,
+.bicho {
   background-color: #abb642;
 }
 
-.dark {
+.dark,
+.siniestro {
   background-color: #6c584a;
 }
 
-.dragon {
+.dragon,
+.dragón {
   background-color: #6843ef;
 }
 
-.electric {
+.electric,
+.eléctrico {
   background-color: #f2d054;
 }
 
-.fairy {
+.fairy,
+.hada {
   background-color: #e29dac;
 }
 
-.flying {
+.flying,
+.volador {
   background-color: #a493ea;
 }
 
-.fighting {
+.fighting,
+.lucha {
   background-color: #b13c31;
 }
 
-.fire {
+.fire,
+.fuego {
   background-color: #e28544;
 }
 
-.ghost {
+.ghost,
+.fantasma {
   background-color: #6c5a94;
 }
 
-.grass {
+.grass,
+.planta {
   background-color: #8bc560;
 }
 
-.ground {
+.ground,
+.tierra {
   background-color: #dbc074;
 }
 
-.ice {
+.ice,
+.hielo {
   background-color: #a6d6d7;
 }
 
@@ -67,23 +77,28 @@ const props = defineProps(['type'])
   background-color: #a8a77d;
 }
 
-.poison {
+.poison,
+.veneno {
   background-color: #94489b;
 }
 
-.psychic {
+.psychic,
+.psíquico {
   background-color: #e66388;
 }
 
-.rock {
+.rock,
+.roca {
   background-color: #b4a04a;
 }
 
-.steel {
+.steel,
+.acero {
   background-color: #b8b8ce;
 }
 
-.water {
+.water,
+.agua {
   background-color: #6f91e9;
 }
 </style>

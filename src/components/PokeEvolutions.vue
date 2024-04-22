@@ -31,7 +31,7 @@ const evolutionsSprites = evolutions.map((evolution) => {
 
 <template>
   <div v-if="evolutions.length > 0">
-    <h3 class="border-bottom pb-2">Evolutions</h3>
+    <h3 class="border-bottom pb-2">{{ $t('modal.evolutions') }}</h3>
     <div class="d-flex flex-wrap gap-1">
       <div
         class="d-flex flex-column align-items-center"
